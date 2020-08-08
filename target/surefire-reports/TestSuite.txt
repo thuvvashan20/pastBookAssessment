@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 129.43 sec <<< FAILURE! - in TestSuite
+emailAccountCreationTest(tests.PastBookCreationTest)  Time elapsed: 66.836 sec  <<< FAILURE!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='book-closed-message-title (tried for 25 second(s) with 500 milliseconds interval)
+	at tests.PastBookCreationTest.emailAccountCreationTest(PastBookCreationTest.java:39)
+Caused by: org.openqa.selenium.InvalidSelectorException: 
+invalid selector: Unable to locate an element with the xpath expression //div[@class='book-closed-message-title because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//div[@class='book-closed-message-title' is not a valid XPath expression.
+  (Session info: chrome=84.0.4147.105)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'thuvvareka.local', ip: 'fe80:0:0:0:145d:9299:86d8:3f95%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.5', java.version: '11.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 84.0.4147.105, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: /var/folders/x4/vpjx3s_x2n5...}, goog:chromeOptions: {debuggerAddress: localhost:54010}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 0ec400678b1a90d6e54c306fdb35d71a
+*** Element info: {Using=xpath, value=//div[@class='book-closed-message-title}
+	at tests.PastBookCreationTest.emailAccountCreationTest(PastBookCreationTest.java:39)
+

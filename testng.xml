@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestNG suite">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+    <suite-files>
+        <suite-file path="./src/suites/emailCreationSuite.xml"/>
+        <suite-file path="./src/suites/pastBookCreation.xml"/>
+
+    </suite-files>
+</suite>

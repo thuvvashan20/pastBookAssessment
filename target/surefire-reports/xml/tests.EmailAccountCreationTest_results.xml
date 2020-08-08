@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Account creation via email address"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="36.285">
+  <properties />
+  
+  
+            <testcase name="signOutTest" time="1.547" classname="tests.EmailAccountCreationTest" />
+                <testcase name="emailAccountCreationTest" time="34.738" classname="tests.EmailAccountCreationTest" />
+      
+</testsuite>
