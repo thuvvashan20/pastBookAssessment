@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Pastbook creation]" guice-stage="DEVELOPMENT" verbose="0">
+<suite name="Failed suite [Pastbook email account creation]" guice-stage="DEVELOPMENT" verbose="0">
   <listeners>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
   </listeners>
-  <test thread-count="5" name="Pastbook creation by title and image upload(failed)" verbose="0">
+  <test thread-count="5" name="Account creation via email address(failed)" verbose="0">
     <classes>
-      <class name="tests.PastBookCreationTest">
+      <class name="tests.EmailAccountCreationTest">
         <methods>
+          <include name="emailAccountCreationTest"/>
           <include name="base"/>
           <include name="baseSetup"/>
-          <include name="emailAccountCreationTest"/>
           <include name="teardown"/>
-          <include name="signIn"/>
+          <include name="signOutTest"/>
         </methods>
-      </class> <!-- tests.PastBookCreationTest -->
+      </class> <!-- tests.EmailAccountCreationTest -->
     </classes>
-  </test> <!-- Pastbook creation by title and image upload(failed) -->
-</suite> <!-- Failed suite [Pastbook creation] -->
+  </test> <!-- Account creation via email address(failed) -->
+</suite> <!-- Failed suite [Pastbook email account creation] -->

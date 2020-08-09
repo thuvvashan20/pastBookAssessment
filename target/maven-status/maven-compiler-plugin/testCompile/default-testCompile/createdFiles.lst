@@ -1,0 +1,11 @@
+tests/EmailAccountCreationTest.class
+tests/SignOutTest.class
+tests/PastBookCreationTest.class
+tests/SignInTest.class
+basic/ReadFileData.class
+pages/EmailAccountCreation.class
+pages/SignIn.class
+basic/PageObject.class
+basic/FunctionalTest.class
+pages/SignOut.class
+pages/PastBookCreation.class

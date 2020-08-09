@@ -2,10 +2,13 @@ package pages;
 
 import basic.PageObject;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
 
 public class PastBookCreation extends PageObject {
     public PastBookCreation(WebDriver driver) {
@@ -24,34 +27,47 @@ public class PastBookCreation extends PageObject {
     By imageClick = By.xpath("//img[contains(@src,'/assets/img/books/moment-minimized.png')]");
     By openBookClick = By.cssSelector("button.btn.btn-primary.btn-lg");
     By pageFlipClick = By.cssSelector("span.icon-arrow-left");
-    By getTitle = By.xpath("//div[@class='book-closed-message-title");
+    By getTitles = By.xpath("//div[@class='quick-link-cover-title hidden-xs']");
 
     public void addPastBook(String title, String file1, String file2) throws InterruptedException {
 
+        Thread.sleep(1500);
         wait.until(ExpectedConditions.elementToBeClickable(titleFiled)).sendKeys(title);
         wait.until(ExpectedConditions.elementToBeClickable(createClick)).click();
         wait.until(ExpectedConditions.elementToBeClickable(uploadClick)).click();
 
         Thread.sleep(4000);
-        WebElement elem = driver.findElement(selectFilesClick);
-        elem.sendKeys(file1);
+        WebElement elementTest1 = driver.findElement(selectFilesClick);
+        File fileOne = new File(file1);
+        elementTest1.sendKeys(fileOne.getAbsolutePath());
 
         wait.until(ExpectedConditions.elementToBeClickable(fileSystemClick)).click();
         Thread.sleep(4000);
-        WebElement elem1 = driver.findElement(selectFilesClick);
-        elem1.sendKeys(file2);
+
+        WebElement elementTest2 = driver.findElement(selectFilesClick);
+        File fileTwo = new File(file2);
+        elementTest2.sendKeys(fileTwo.getAbsolutePath());
         wait.until(ExpectedConditions.elementToBeClickable(uploadBtnClick)).click();
+
         Thread.sleep(15000);
         WebElement imageSelection = wait.until(ExpectedConditions.elementToBeClickable(imageClick));
         imageSelection.click();
         Thread.sleep(6000);
         driver.findElement((continueClick)).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(openBookClick)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(pageFlipClick)).click();
+        /*wait.until(ExpectedConditions.elementToBeClickable(openBookClick)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(pageFlipClick)).click();*/
 
-        readMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(getTitle)).getText();
-        System.out.println("++" + readMessage + "+");
+        Thread.sleep(3000);
+
+        WebElement element = driver.findElement(getTitles);
+        readMessage= (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].value;", element);
+
+        //readMessage = driver.findElement(getTitles).getText();
+        System.out.println("88888888888"+readMessage);
+
+//        readMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(getTitle)).getText();
+//        System.out.println("++" + readMessage + "+");
 
         Thread.sleep(10000);
 

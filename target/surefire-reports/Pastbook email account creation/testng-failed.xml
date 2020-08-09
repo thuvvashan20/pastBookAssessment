@@ -13,6 +13,7 @@
           <include name="base"/>
           <include name="baseSetup"/>
           <include name="teardown"/>
+          <include name="signOutTest"/>
         </methods>
       </class> <!-- tests.EmailAccountCreationTest -->
     </classes>

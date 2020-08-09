@@ -2,6 +2,7 @@ package tests;
 
 import basic.FunctionalTest;
 import basic.ReadFileData;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.PastBookCreation;
@@ -13,8 +14,8 @@ public class PastBookCreationTest extends FunctionalTest {
     SignIn pastBookLogin = null;
     SignOut pastBookLogout = null;
     PastBookCreation pastBook = null;
-    String filePath1 = "/Users/thuvvareka/Documents/gapstar_assessment/src/test/java/files/pic1.jpeg";
-    String filePath2 = "/Users/thuvvareka/Documents/gapstar_assessment/src/test/java/files/pic2.png";
+    String filePath1 = "src/test/java/files/pic1.jpeg";
+    String filePath2 = "src/test/java/files/pic2.png";
 
     @BeforeClass
     public void base() {
@@ -40,4 +41,11 @@ public class PastBookCreationTest extends FunctionalTest {
         pastBook.addPastBook(data.getPropertyValue("title"), filePath1, filePath2);
 
     }
+    /*@Test
+    public void signOutTest() {
+
+        pastBookLogout.signOut();
+        Assert.assertEquals(pastBookLogout.welcomPage, "Create beautiful photo albums,together with your " +
+                "friends.Hassle-free.");
+    }*/
 }
