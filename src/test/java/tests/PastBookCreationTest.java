@@ -41,11 +41,11 @@ public class PastBookCreationTest extends FunctionalTest {
         pastBook.addPastBook(data.getPropertyValue("title"), filePath1, filePath2);
 
     }
-    /*@Test
+    @Test
     public void signOutTest() {
 
         pastBookLogout.signOut();
         Assert.assertEquals(pastBookLogout.welcomPage, "Create beautiful photo albums,together with your " +
                 "friends.Hassle-free.");
-    }*/
+    }
 }

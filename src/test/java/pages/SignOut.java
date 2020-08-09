@@ -19,6 +19,11 @@ public class SignOut extends PageObject {
 
     public void signOut() {
 
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         wait.until(ExpectedConditions.elementToBeClickable(settingsClick)).click();
         wait.until(ExpectedConditions.elementToBeClickable(signOutClick)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(getTitle));

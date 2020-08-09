@@ -31,8 +31,8 @@ public class PastBookCreation extends PageObject {
 
     public void addPastBook(String title, String file1, String file2) throws InterruptedException {
 
-        Thread.sleep(1500);
-        wait.until(ExpectedConditions.elementToBeClickable(titleFiled)).sendKeys(title);
+        Thread.sleep(6000);
+        driver.findElement(titleFiled).sendKeys(title);
         wait.until(ExpectedConditions.elementToBeClickable(createClick)).click();
         wait.until(ExpectedConditions.elementToBeClickable(uploadClick)).click();
 
@@ -55,21 +55,13 @@ public class PastBookCreation extends PageObject {
         Thread.sleep(6000);
         driver.findElement((continueClick)).click();
 
-        /*wait.until(ExpectedConditions.elementToBeClickable(openBookClick)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(pageFlipClick)).click();*/
+        wait.until(ExpectedConditions.elementToBeClickable(openBookClick)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(pageFlipClick)).click();
 
         Thread.sleep(3000);
 
         WebElement element = driver.findElement(getTitles);
         readMessage= (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].value;", element);
-
-        //readMessage = driver.findElement(getTitles).getText();
-        System.out.println("88888888888"+readMessage);
-
-//        readMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(getTitle)).getText();
-//        System.out.println("++" + readMessage + "+");
-
-        Thread.sleep(10000);
-
+        Thread.sleep(2000);
     }
 }

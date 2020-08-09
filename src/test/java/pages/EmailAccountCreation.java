@@ -46,13 +46,14 @@ public class EmailAccountCreation extends PageObject {
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        WebElement element1 = driver.findElement(loginLinkClick);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element1);
+        Thread.sleep(2000);
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
         driver.manage().window().maximize();
-        wait.until(ExpectedConditions.elementToBeClickable(settingsClick)).click();
+
+        Thread.sleep(2000);
+        driver.findElement(settingsClick).click();
         wait.until(ExpectedConditions.elementToBeClickable(profileClick)).click();
         wait.until(ExpectedConditions.elementToBeClickable(firstNameField)).sendKeys(firstName);
         wait.until(ExpectedConditions.elementToBeClickable(lastNameField)).sendKeys(lastName);

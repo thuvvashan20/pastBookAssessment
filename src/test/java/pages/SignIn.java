@@ -34,14 +34,15 @@ public class SignIn extends PageObject {
         wait.until(ExpectedConditions.elementToBeClickable(userEmailField)).sendKeys(emailAdd);
         wait.until(ExpectedConditions.elementToBeClickable(nextClick)).click();
         wait.until(ExpectedConditions.elementToBeClickable(passField)).sendKeys(password);
-        wait.until(ExpectedConditions.elementToBeClickable(nextClick)).click();
+
+        Thread.sleep(1500);
+        driver.findElement(nextClick).click();
         Thread.sleep(5000);
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        wait.until(ExpectedConditions.elementToBeClickable(loginLinkClick));
-        WebElement element1 = driver.findElement(loginLinkClick);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element1);
+        Thread.sleep(1500);
+
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
